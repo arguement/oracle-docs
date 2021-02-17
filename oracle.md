@@ -20,6 +20,13 @@ select sa.*,max(unitprice) over(order by customerid) from sales sa;
 
 ```
 
+```sql
+
+select sa.*,ROW_NUMBER() over(partition by customerid order by customerid) as co from sales sa;
+
+
+```
+
 
 ## Cursor
 ---
